@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
+const basePath = process.env.VUE_APP_BASEPATH;
+
 const routes = [
   {
     path: "/",
@@ -8,7 +10,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
+    path: `${basePath}/about`,
     name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -17,7 +19,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/chat",
+    path: `${basePath}/chat`,
     name: "chat",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -26,7 +28,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/ChatView.vue"),
   },
   {
-    path: "/objects",
+    path: `${basePath}/objects`,
     name: "objects",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
