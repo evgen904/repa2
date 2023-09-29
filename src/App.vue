@@ -1,9 +1,9 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/chat">Chat</router-link> |
-    <router-link to="/objects">Objects</router-link>
+    <router-link to="/repa2/">Home</router-link> |
+    <router-link to="/repa2/about">About</router-link> |
+    <router-link to="/repa2/chat">Chat</router-link> |
+    <router-link to="/repa2/objects">Objects</router-link>
   </nav>
   <router-view />
 </template>

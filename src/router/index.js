@@ -1,11 +1,13 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createMemoryHistory, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
+const isServer = typeof window === "undefined";
 const basePath = process.env.VUE_APP_BASEPATH;
+let history = isServer ? createMemoryHistory() : createWebHistory();
 
 const routes = [
   {
-    path: "/",
+    path: `${basePath}/`,
     name: "home",
     component: HomeView,
   },
@@ -39,7 +41,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history,
   routes,
 });
 
